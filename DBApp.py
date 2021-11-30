@@ -8,14 +8,14 @@ if remote_connection == "yes":
   host="127.0.0.1",
   user="ht21_2_group_"+group_number,
   passwd="pwd_"+group_number,
-  database="ht21_2_project_group_"+group_number
+  database="ht21_2_hotels_group_"+group_number
 )
 else:
   mydb = mysql.connector.connect(
     host="groucho.it.uu.se",
     user="ht21_2_group_"+group_number,
     passwd="pwd_"+group_number,
-    database="ht21_2_project_group_"+group_number
+    database="ht21_2_hotels_group_"+group_number
   )
 
 mycursor = mydb.cursor()
