@@ -11,19 +11,19 @@ mydb = mysql.connector.connect(
 
 mycursor = mydb.cursor()
 
-#department = input('Department: ')
-#mycursor.execute("SELECT Title_of_department FROM Department WHERE Parent_dep={department}")
-#myresult = mycursor.fetchall()
-#if len(mycursor.fetchall()) < 1:
-    #mycursor.execute("SELECT Title_of_product, Retail_price_without_tax*(1+Tax/100)*(1-Discount/100) FROM Product WHERE Product.Title_of_department={department}")
-    #myresult = mycursor.fetchall()
-    #print(f'Title_of_department \t Retail price (w. discount)')
-    #for x in myresult:
-        #print(f"x[0] \t x[1]")
-#else:
-    #print('Child departments')
-    #for x in myresult:
-        #print(F"x[0]")
+department = input('Department: ')
+mycursor.execute("SELECT Title_of_department FROM Department WHERE Parent_dep={department}")
+myresult = mycursor.fetchall()
+if len(mycursor.fetchall()) < 1:
+    mycursor.execute("SELECT Title_of_product, Retail_price_without_tax*(1+Tax/100)*(1-Discount/100) FROM Product WHERE Product.Title_of_department={department}")
+    myresult = mycursor.fetchall()
+    print(f'Title_of_department \t Retail price (w. discount)')
+    for x in myresult:
+        print(f"x[0] \t x[1]")
+else:
+    print('Child departments')
+    for x in myresult:
+        print(F"x[0]")
 
 mydb.close()
 
