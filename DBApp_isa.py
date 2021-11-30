@@ -35,37 +35,3 @@ else:
         print(f"{x[0]}")
 
 mydb.close()
-
-###############################################
-#import mysql.connector
-
-#group_number="15" #FILL IN YOUR GROUP NUMBER
-
-#mydb = mysql.connector.connect(
-  #host="127.0.0.1",
-  #user="ht21_2_group_"+group_number,
-  #passwd="pwd_"+group_number,
-  #database="ht21_2_hotels_group_"+group_number
-#)
-
-#mycursor = mydb.cursor()
-
-#product = input('Product: ')
-#mycursor.execute("SELECT Discount FROM Product WHERE Title_of_product={product}")
-#myresult = mycursor.fetchone()
-
-#print(f'Current discount: {myresult[0]}')
-#answer = input('Change discount (Yes/No)? ')
-#if answer=='Yes':
-    #new_disc=float(input('New discount (in percentage without %): '))
-    #mycursor.execute("UPDATE Product SET discount={new_disc} WHERE Title_of_product={product}")
-    #mydb.commit()
-
-    #mycursor.execute("SELECT Discount FROM Product WHERE Title_of_product={product}")
-    #myresult = mycursor.fetchone()
-    #print('Discount changed to' + str(myresult[0]) + '%')
-
-#else: 
-    #print('Discount not changed.')
-
-#mydb.close()
